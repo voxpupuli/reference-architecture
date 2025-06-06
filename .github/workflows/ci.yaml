@@ -43,6 +43,7 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           install-openvox: true
           github-runner: false
+          debug: true
           vms: |-
             [
               {
