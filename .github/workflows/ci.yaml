@@ -23,7 +23,7 @@ env:
 jobs:
   acceptance:
     name: Acceptance Tests
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
