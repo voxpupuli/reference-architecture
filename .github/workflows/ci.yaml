@@ -2,7 +2,7 @@
 name: Run beaker acceptance tests
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
     inputs:
       collection:
         description: |-
