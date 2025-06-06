@@ -42,6 +42,7 @@ jobs:
           host-root-access: true
           ruby-version: ${{ env.RUBY_VERSION }}
           install-openvox: true
+          persistent-runner: true
           vms: |-
             [
               {
