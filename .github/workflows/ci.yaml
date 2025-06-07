@@ -47,9 +47,9 @@ jobs:
           vms: |-
             [
               {
-                "role": "server",
+                "role": "primary",
                 "count": 1,
-                "cpus": 4,
+                "cpus": 8,
                 "mem_mb": 4096,
                 "cpu_mode": "host-model"
               },
