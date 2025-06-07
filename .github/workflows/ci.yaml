@@ -32,6 +32,16 @@ jobs:
           - [almalinux, '9']
     steps:
       - uses: actions/checkout@v4
+      - name: Cleaning up the hypervisor
+        shell: bash
+        run: |
+          for domain in $(virsh list --name); do virsh destroy $domain; done
+          if virsh net-list | grep -q test; then
+            virsh net-destroy test
+          fi
+          if virsh net-list --inactive | grep -q test; then
+            virsh net-undefine test
+          fi
       - id: vm-cluster
         uses: bastelfreak/nested_vms@reference-architecture
         with:
