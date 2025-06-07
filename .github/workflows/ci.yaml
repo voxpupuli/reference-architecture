@@ -61,3 +61,7 @@ jobs:
                 "cpu_mode": "host-model"
               }
             ]
+      # TODO replace with teardown plan
+      - name: Deleting a cluster
+        if: always()
+        run: virsh net-destroy test
