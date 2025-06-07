@@ -64,7 +64,9 @@ jobs:
       # TODO replace with teardown plan
       - name: Deleting a cluster
         if: always()
+        shell: bash
         run: |
+          for domain in $(virsh list --name); do virsh destroy $domain; done
           if virsh net-list | grep -q test; then
             virsh net-destroy test
           fi
