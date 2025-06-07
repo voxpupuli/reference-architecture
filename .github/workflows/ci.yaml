@@ -65,5 +65,9 @@ jobs:
       - name: Deleting a cluster
         if: always()
         run: |
-          virsh net-destroy test
-          virsh net-undefine test
+          if virsh net-list | grep -q test; then
+            virsh net-destroy test
+          fi
+          if virsh net-list --inactive | grep -q test; then
+            virsh net-undefine test
+          fi
