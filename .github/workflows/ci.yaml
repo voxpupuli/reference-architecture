@@ -35,7 +35,10 @@ jobs:
       - name: Cleaning up the hypervisor
         shell: bash
         run: |
-          for domain in $(virsh list --name); do virsh destroy $domain; done
+          for domain in $(virsh list --name | awk '/^test-/ {print $1}'); do
+            virsh destroy $domain
+            virsh undefine $domain --managed-save --remove-all-storage --delete-storage-volume-snapshots --wipe-storage --snapshots-metadata --checkpoints-metadata --nvram --tpm
+          done
           if virsh net-list | grep -q test; then
             virsh net-destroy test
           fi
@@ -85,7 +88,10 @@ jobs:
         if: always()
         shell: bash
         run: |
-          for domain in $(virsh list --name); do virsh destroy $domain; done
+          for domain in $(virsh list --name | awk '/^test-/ {print $1}'); do
+            virsh destroy $domain
+            virsh undefine $domain --managed-save --remove-all-storage --delete-storage-volume-snapshots --wipe-storage --snapshots-metadata --checkpoints-metadata --nvram --tpm
+          done
           if virsh net-list | grep -q test; then
             virsh net-destroy test
           fi
