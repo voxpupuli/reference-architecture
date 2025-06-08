@@ -78,13 +78,6 @@ jobs:
                 "cpus": 8,
                 "mem_mb": 4096,
                 "cpu_mode": "host-model"
-              },
-              {
-                "role": "agent",
-                "count": 1,
-                "cpus": 4,
-                "mem_mb": 4096,
-                "cpu_mode": "host-model"
               }
             ]
       - name: Install Ruby and Run Bundler
