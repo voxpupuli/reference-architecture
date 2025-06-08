@@ -119,6 +119,8 @@ jobs:
         working-directory: site/voxpupuli_roles
         shell: bash
         run: bundle exec rake -T
+        env:
+          BUNDLE_WITHOUT: development:test:release
       - name: Teardown
         if: always()
         working-directory: kvm_automation_tooling
