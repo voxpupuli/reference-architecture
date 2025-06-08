@@ -92,3 +92,12 @@ jobs:
           if virsh net-list --inactive | grep -q test; then
             virsh net-undefine test
           fi
+          # list all pools; list all volumes in pool; delete all volumes; delete all pools
+          # this is a bit shitty; but libvirt creates the files as root:root and our github action runs as runner and I don't want to allow it to run sudo rm -rf /var/...
+          for pool in $(virsh pool-list --name | awk '/.pool/ {print $1}'); do
+            for vol in $(virsh vol-list --pool $pool); do
+              virsh vol-delete $vol --pool $pool
+            done
+            virsh pool-destroy $pool
+            virsh pool-undefine $pool
+          done
