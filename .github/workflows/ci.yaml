@@ -94,6 +94,8 @@ jobs:
           working-directory: site/voxpupuli_roles
           bundler-cache: true
           self-hosted: true
+        env:
+          BUNDLE_WITHOUT: development:test:release
       - name: Display Ruby Environment
         run: bundle env
         working-directory: site/voxpupuli_roles
