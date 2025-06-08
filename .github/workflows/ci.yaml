@@ -113,6 +113,10 @@ jobs:
             kvm_automation_tooling::dev::generate_beaker_hosts_file \
             --inventory "${INVENTORY}" \
             hosts_yaml="${HOSTS_YAML}"
+      - name: run beaker
+        working-directory: site/voxpupuli_roles
+        shell: bash
+        run: bundle exec rake -T
       - name: Teardown
         if: always()
         working-directory: kvm_automation_tooling
