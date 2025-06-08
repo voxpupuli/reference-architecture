@@ -1,0 +1,5 @@
+# ignore common paths for Ruby development files
+/.vendor
+/vendor
+Gemfile.lock
+/.bundle

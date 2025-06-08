@@ -28,6 +28,12 @@ We want to eliminate this bottleneck by providing tested and documented examples
 * will contain github releases and tags
 * profiles will be released as puppet modules to the forge and github releases
 
+### Gemfile
+
+### Rakefile
+
+### .github/dependabot.yml
+
 ## Single Server Architecture
 
 * embed picture from https://voxpupuli.org/docs/arch_single_server/
