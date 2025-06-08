@@ -87,11 +87,6 @@ jobs:
                 "cpu_mode": "host-model"
               }
             ]
-      - name: debug
-        shell: bash
-        run: |
-          tree .
-          find . -type f -name inventory.test.yaml
       - name: Install Ruby and Run Bundler
         uses: ruby/setup-ruby@v1
         with:
