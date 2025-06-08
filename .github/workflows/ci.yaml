@@ -93,7 +93,7 @@ jobs:
           ruby-version: ${{ env.RUBY_VERSION }}
           working-directory: site/voxpupuli_roles
           bundler-cache: true
-          self-hosted: false
+          self-hosted: true
       - name: Display Ruby Environment
         run: bundle env
         working-directory: site/voxpupuli_roles
