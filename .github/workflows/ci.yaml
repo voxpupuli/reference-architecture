@@ -42,6 +42,8 @@ jobs:
           if virsh net-list --inactive | grep -q test; then
             virsh net-undefine test
           fi
+          for pool in $(virsh pool-list --name | awk '/.pool/ {print $1}'); do virsh pool-destroy $pool; done
+          for pool in $(virsh pool-list --name --all | awk '/.pool/ {print $1}'); do virsh pool-undefine $pool; done
       - id: vm-cluster
         uses: bastelfreak/nested_vms@reference-architecture
         with:
