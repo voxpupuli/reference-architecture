@@ -102,6 +102,12 @@ jobs:
       - name: Ensure nodeset dir exists
         run: mkdir -p ${{ github.workspace }}/site/voxpupuli_roles/spec/acceptance/nodesets/
         shell: bash
+      - name: debug
+        shell: bash
+        run: |
+          sudo apt install -y tree
+          tree .
+          find . -type f -name inventory.test.yaml
       - name: Construct hosts.yaml
         working-directory: kvm_automation_tooling
         env:
