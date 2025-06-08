@@ -111,6 +111,7 @@ jobs:
         env:
           BUNDLE_WITHOUT: development:test:release
           BEAKER_setfile: ${{ github.workspace }}/site/voxpupuli_roles/hosts.yaml
+          BEAKER_PUPPET_COLLECTION: none
       - name: Teardown
         if: always()
         working-directory: kvm_automation_tooling
