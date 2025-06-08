@@ -17,6 +17,7 @@ on:
 permissions:
   contents: read
 
+# needs to match the Ruby version we install via Puppet
 env:
   RUBY_VERSION: '3.4.4'
 
@@ -24,6 +25,7 @@ jobs:
   acceptance:
     name: Acceptance Tests
     runs-on: self-hosted
+    if: github.repository_owner == 'voxpupuli'
     strategy:
       fail-fast: false
       matrix:

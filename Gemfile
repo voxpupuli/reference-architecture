@@ -6,4 +6,4 @@ source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 # dependabot will raise a PR when a new version is available that's excluded by the constraints
 # that enables users to test new major versions in a PR first
 gem 'rake', '~> 13.3', require: false
-gem 'ra10ke', '~> 4.3', require: false
+gem 'ra10ke', '~> 4.4', require: false
