@@ -5,6 +5,10 @@ This repository contains tested and ready-to-use OpenVox code for the [single se
 ---
 
 * [Reasoning](#reasoning)
+* [Repository Structure](#repository-structure)
+* [Single Server Architecture](#single-server-architecture)
+* [Load Balanced Architecture](#load-balanced-architecture)
+* [Testing](#testing)
 * [License](#license)
 
 ## Reasoning
@@ -16,6 +20,25 @@ But it also makes it hard for beginners to make the right decisions at the begin
 OpenVox is consultant-friendly, which means it's easy to start with when you're guided by an already experienced user.
 
 We want to eliminate this bottleneck by providing tested and documented examples for spinning up your infrastructure in different scenarios.
+
+## Repository Structure
+
+* will contain tested profiles
+* will contain control-repo best practices
+* will contain github releases and tags
+* profiles will be released as puppet modules to the forge and github releases
+
+## Single Server Architecture
+
+* embed picture from https://voxpupuli.org/docs/arch_single_server/
+
+## Load Balanced Architecture
+
+* embed picture from https://voxpupuli.org/docs/arch_load_balanced/
+
+## Testing
+
+* explain how we test code here and spin up clusters
 
 ## License
 
