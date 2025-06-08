@@ -118,7 +118,7 @@ jobs:
       - name: run beaker
         working-directory: site/voxpupuli_roles
         shell: bash
-        run: bundle exec rake -T
+        run: bundle exec rake beaker
         env:
           BUNDLE_WITHOUT: development:test:release
       - name: Teardown
