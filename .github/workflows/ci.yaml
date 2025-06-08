@@ -105,7 +105,7 @@ jobs:
       - name: debug
         shell: bash
         run: |
-          sudo apt install -y tree
+          sudo apt-get install -y tree
           tree .
           find . -type f -name inventory.test.yaml
       - name: Construct hosts.yaml
