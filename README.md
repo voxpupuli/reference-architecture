@@ -34,6 +34,13 @@ We want to eliminate this bottleneck by providing tested and documented examples
 
 ### .github/dependabot.yml
 
+Configures [dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) to provide PRs for updates Ruby Gems or GitHub actions
+
+### renovate.json
+
+Parses the [Puppetfile](Puppetfile) and provides PRs for updates.
+Renovate needs to be installed as a GitHub App.
+
 ## Single Server Architecture
 
 * embed picture from https://voxpupuli.org/docs/arch_single_server/
