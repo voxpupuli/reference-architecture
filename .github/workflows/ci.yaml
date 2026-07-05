@@ -35,7 +35,7 @@ jobs:
           - [almalinux, '8']
           - [almalinux, '9']
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Cleaning up the hypervisor
         shell: bash
         run: |
